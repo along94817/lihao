@@ -1,0 +1,562 @@
+*{
+	margin:0px;
+	padding:0px;
+	list-style:none;
+	text-decoration: none;
+}
+a{
+	color:#a4b7c2;
+}
+@font-face {
+  font-family: 'iconfont';
+  src: url('font/iconfont.eot');
+  src: url('font/iconfont.eot?#iefix') format('embedded-opentype'),
+  url('font/iconfont.woff') format('woff'),
+  url('font/iconfont.ttf') format('truetype'),
+  url('font/iconfont.svg#iconfont') format('svg');
+}
+.iconfont{
+  font-family:"iconfont" !important;
+  font-size:8px;font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#pop{
+	width:100%;
+	height:800px;
+	position:fixed;
+	top:0px;
+	left:0px;
+}
+#BgImage{
+	width:100%;
+	height:800px;
+}
+#BgZh{
+	width:100%;
+	height:800px;
+	background:rgba(0,0,0,0.4);
+	position:fixed;
+	top:0px;
+	left:0px;
+	z-index:999999;
+}
+#ppt{
+	width:100%;
+	height:800px;
+	position:relative;
+}
+#ppt li{
+	position:absolute;
+	width:100%;
+	height:800px;
+	opacity: 0;
+}
+#ppt>li:first-of-type{
+	opacity: 1;
+}
+#ppt>li>img{
+	width:100%;
+	height:100%;
+}
+.btnleft{
+	position:absolute;
+	top:20%;
+	left:0px;
+	margin-top:-100px;
+	width:80px;
+	height:150px;
+	background:rgba(0,0,0,0.5);
+	text-align:center;
+	line-height:100px;
+	color:white;
+	z-index:9999;
+	cursor: pointer;
+	opacity: 0;
+}
+.btnleft .iconfont{
+	font-size:50px;
+	color:rgba(255,255,255,0.6);
+	position:absolute;
+	top:20%;
+	left:10px;
+	z-index: 99999;
+}
+.btnright .iconfont{
+	font-size:50px;
+	color:rgba(255,255,255,0.6);
+	position:absolute;
+	top:20%;
+	right:15px;
+}
+.btnright{
+	position:absolute;
+	top:20%;
+	right:0px;
+	margin-top:-100px;
+	width:80px;
+	height:150px;
+	background:rgba(0,0,0,0.5);
+	text-align:center;
+	line-height:100px;
+	color:white;
+	z-index: 9999;
+	cursor:pointer;
+	transform:rotateY(180deg);
+	opacity: 0;
+}
+#container{
+	width:100%;
+	margin:0px auto;
+	overflow:hidden;
+	position:relative;
+	z-index:10;
+}
+#header{
+	width:100%;
+	height:800px;
+	/*border:1px solid red;*/
+}
+.headerTop{
+	width:100%;
+	height:90px;
+	border-bottom:1px solid rgba(255,255,255,0.1);
+}
+.headerTCenter{
+	width:1140px;
+	height:89px;
+	/*border:1px solid red;*/
+	margin:0px auto;
+}
+.headerTCLeft{
+	float:left;
+	width:90px;
+	height:90px;
+	text-align:center;
+	line-height:90px;
+	color:#FFF;
+	font-size:20px;
+	font-weight:700;
+	font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+/*header右侧导航栏*/
+.headerNav{
+	width:345px;
+	height:55px;
+	margin-top:15px;
+	float:right;
+	position: relative;
+}
+.headerNavList{
+	margin-top:6px;
+	position:absolute;
+}
+.headerNavList>.navColor>a{
+	color:rgba(255, 255, 255, 0.5);
+	font-size:14px;
+	font-weight:400;
+	font-family:"Raleway", Arial, sans-serif;
+	transition:all 0.3s linear;
+}
+.headerNavList>.navColor{
+	width:42px;
+	height:25px;
+	padding:12px 16px;
+	float:left;
+	color:black;
+	text-align:center;
+	line-height:25px;
+}
+.headerNavList>.navDrop{
+	width:72px;
+	height:25px;
+	padding:12px 16px;
+}
+.navSecond{
+	width:140px;
+	height:260px;
+	background-color: white;
+	border-radius:5px;
+	position: absolute;
+	cursor:pointer;
+	display:none;
+	box-shadow:0 0 30px 5px rgba(0,0,0,0.1);
+}
+/*菜单位置*/
+.navSecond1{
+	left:70px;
+	top:46px;
+}
+.navSecond2{
+	left:150px;
+	top:46px;
+}
+.navSecond3{
+	left:120px;
+	top:100px;
+}
+.navSecond>li{
+	color:black;
+	font-family:"Raleway", Arial, sans-serif;
+	padding:9px 15px; 
+	text-align:left;
+	font-size:12px;
+	transition:all 0.3s linear;
+}
+/*当前li高亮显示*/
+.headerNav>.headerNavList>.homeMark4>a{
+	color:white;
+}
+/*鼠标经过高亮显示*/
+.headerNav>.headerNavList>.navColor:hover a{
+	color:white;
+}
+/*二级菜单下箭头*/
+.spanPosition1{
+	position:absolute;
+	left:135px;
+	top:16px;
+	color:rgba(255, 255, 255, 0.5);
+	font-size:12px;
+	font-weight:800;
+	transform:rotate(90deg);
+}
+.spanPosition2{
+	position:absolute;
+	left:236px;
+	top:16px;
+	color:rgba(255, 255, 255, 0.5);
+	font-size:12px;
+	font-weight:800;
+	transform:rotate(90deg);
+}
+/*上箭头*/
+.navSecond1:after,.navSecond2:after{
+	width: 0;
+    height: 0;
+    position: absolute;
+    content: '';
+    top: -10px;
+    left: 12px;
+    border-style: solid;
+    border-width: 10px 8px 0 8px;
+    border-color: #FFF transparent transparent transparent;
+    transform:rotateX(180deg); 
+}
+/*三级菜单右侧箭头*/
+.navhidej{
+	padding-left:10px;
+	font-size:12px;
+}
+/*header右侧导航栏结束*/
+.headerBottom{
+	width:100%;
+	height:189px;
+	text-align:center;
+	margin:0px auto;
+	position:absolute;
+	top:450px;
+	opacity: 0;
+	z-index: 1;
+}
+.headerBottomText{
+	height:66px;
+	line-height:66px;
+	font-size:60px;
+	color:white;
+	word-spacing: 20px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.headerBottomChge{
+	cursor:pointer;
+	width:254px;
+	height:56px;
+	margin-top:30px;
+	background:#83CC61;
+	border:2px solid transparent;
+	border-radius:5px;
+	text-align:center;
+	line-height:58px;
+	position:absolute;
+	left:50%;
+	color:#FFF;
+	font-size:18px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	margin-left:-127px;
+	transition:all 0.2s linear;
+}
+
+.headerBottomChge:hover{
+	background:transparent;
+	border:2px solid white;
+}
+
+/*main部分*/
+#main{
+	width:100%;
+	height:1046px;
+	background:#121212;
+}
+.mainCenter1{
+	width:1170px;
+	height:1046px;
+	margin:0px auto;
+	opacity: 0;
+}
+.mainTop{
+	width:100%;
+	height:384px;
+	padding:80px 0px;
+	/*border:1px solid red;*/
+}
+.mainTopLeft{
+	width:555px;
+	height:310px;
+	padding:0px 15px;
+	float:left;
+}
+.mainTopRight{
+	width:585px;
+	height:310px;
+	float:left;
+}
+
+.mainTopLeft h3{
+	width:555px;
+	height:26px;
+	text-align:left;
+	line-height:26px;
+	font-size:24px;
+	font-family:"Raleway", Arial, sans-serif;
+	font-weight: 400;
+	color:#5a5a5a;
+}
+.mainTopLeft p{
+	width:555px;
+	height:50px;
+    font-size: 16px;
+    color: #848484;
+    margin-top:30px;
+    font-family: "Raleway", Arial, sans-serif;
+}
+.mainTopLeft ul{
+	width:555px;
+	height:160px;
+	margin-top:24px;
+	position:relative;
+}
+.mainTopLeft ul li{
+	width:515px;
+	height:25px;
+	padding-left:40px;
+	margin-bottom:20px;
+	font-size: 16px;
+    color: #848484;
+    font-family: "Raleway", Arial, sans-serif;
+}
+.mainTopLeft ul li .iconfont{
+	position:absolute;
+	left:00px;
+}
+.mainInput1{
+	width:262px;
+	height:80px;
+	padding:0px 15px;
+	float:left;
+}
+.mainInput2{
+	width:262px;
+	height:80px;
+	padding:0px 0px 0px 15px;
+	float:left;
+}
+.mainInput2 input{
+	width:220px;
+	height:28px;
+	padding:10px 20px;
+	border:1px solid rgba(255, 255, 255, 0.1);
+	background:transparent;
+	outline:none;
+	font-size:18px;
+	color:#555555;
+	transition:all 0.5s ease;
+}
+.mainInput1 input{
+	width:220px;
+	height:28px;
+	padding:10px 20px;
+	border:1px solid rgba(255, 255, 255, 0.1);
+	background:transparent;
+	outline:none;
+	font-size:18px;
+	color:#555555;
+	transition:all 0.5s ease;
+}
+.mainTextArea{
+	width:555px;
+	height:227px;
+	padding:0px 15px;
+	clear:both;
+}
+.mainTextArea textarea{
+	width:513px;
+	height:175px;
+	padding:10px 20px;
+	margin-top:10px;
+	font-size:18px;
+	color:#555555;
+	border:1px solid rgba(255, 255, 255, 0.1);
+	outline:none;
+	text-indent:40px;
+	font-family:  "Raleway", Arial, sans-serif;
+	background:transparent;
+	transition:all 0.3s linear;
+}
+.mainSub{
+	width:208px;
+	height:48px;
+	border-radius:5px;
+	background:#83CC61;
+	font-size:18px;
+	color:#fcfcfc;
+	font-family:  "Raleway", Arial, sans-serif;
+	text-align:center;
+	line-height:28px;
+	letter-spacing:0.8px;
+	margin-left:16px;
+	cursor:pointer;
+	outline:none;
+	border:0px;
+	transition:all 0.5s ease;
+}
+.mainSub:hover{
+	background:#848484;
+	color:white;
+}
+.mainBottom{
+	height:500px;
+	position: relative;
+}
+.mainBottomdiv{
+	width:190px;
+	height:50px;
+	font-family:  "Raleway", Arial, sans-serif;
+	font-size:50px; 
+	color:white;
+	font-weight:800;
+	text-align:center;
+	line-height:50px;
+	position:absolute;
+	top:0px;
+	left:0px;
+}
+/*input提示框*/
+
+.tShK{
+	width:200px;
+	height:30px;
+	background:orange;
+	color:black;
+	font-size:16px;
+	border-radius:5px;
+	font-family: "微软雅黑";
+	text-align:center;
+	line-height:30px;
+	margin-left:80px;
+	margin-top:10px;
+	position: relative;
+	display:none;
+}
+.tShK:after{
+	width: 0;
+    height: 0;
+    position: absolute;
+    content: '';
+    top: -10px;
+    left: 12px;
+    border-style: solid;
+    border-width: 10px 8px 0 8px;
+    border-color: orange transparent transparent transparent;
+    transform:rotateX(180deg); 
+}
+.tShk2{
+	width:200px;
+	height:30px;
+	background:orange;
+	color:black;
+	font-size:16px;
+	border-radius:5px;
+	font-family: "微软雅黑";
+	text-align:center;
+	line-height:30px;
+	margin-left:80px;
+	margin-top:10px;
+	position:relative;
+	display:none;
+}
+.tShk2:after{
+	width: 0;
+    height: 0;
+    position: absolute;
+    content: '';
+    top: -10px;
+    left: 12px;
+    border-style: solid;
+    border-width: 10px 8px 0 8px;
+    border-color: orange transparent transparent transparent;
+    transform:rotateX(180deg); 
+}
+/*footer部分*/
+#footer{
+	width:100%;
+	height:94px;
+	padding:60px 0px 40px;
+	background:#000000;
+	position:relative;
+}
+.footerContent{
+	width:585px;
+	height:94px;
+	position:absolute;
+	left:50%;
+	margin-left:-292px;
+  }
+.footerImage{
+	width:300px;
+	height:30px;
+	/*border:1px solid red;*/
+	margin:0px auto;
+}
+.footerText{
+	width:585px;
+	height:22px;
+	text-align:center;
+	color:rgba(255, 255, 255, 0.7);
+	font-size:14px;
+	margin-top:21px;
+	letter-spacing: 1px;
+	font-family: "Raleway", Arial, sans-serif; 
+}
+.footerImage ul li{
+	float:left;
+	text-align:center;
+	background:#fff;
+	text-align:center;
+	line-height:20px;
+	width:20px;
+	height:20px;
+	margin:0px 20px;
+	cursor:pointer;
+}
+.footerImage ul li .iconfont{
+	color:rgba(255, 255, 255, 0.7);
+	font-size:20px;
+	background-color: #000;
+	padding:0px 10px;
+	transition:all 0.3s linear;
+}
+.footerImage ul li .iconfont:hover{
+	color:white;
+}
